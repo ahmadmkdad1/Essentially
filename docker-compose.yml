@@ -1,0 +1,41 @@
+# Runs the API with PostgreSQL:  docker compose up --build
+# Then seed demo data:           docker compose exec api node dist/database/seed.js
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: essentially
+      POSTGRES_PASSWORD: essentially
+      POSTGRES_DB: essentially
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U essentially"]
+      interval: 5s
+      retries: 10
+
+  api:
+    build: ./backend
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      DB_TYPE: postgres
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USERNAME: essentially
+      DB_PASSWORD: essentially
+      DB_NAME: essentially
+      DB_SYNCHRONIZE: "true"
+      JWT_SECRET: change-this-to-a-long-random-secret-in-production
+      ADMIN_EMAIL: admin@essentially.app
+      ADMIN_PASSWORD: Admin@12345
+    ports:
+      - "3000:3000"
+
+volumes:
+  pgdata:
