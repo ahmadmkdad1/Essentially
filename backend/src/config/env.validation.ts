@@ -21,6 +21,7 @@ export const envValidationSchema = Joi.object({
   JWT_EXPIRES_IN: Joi.string().default('7d'),
 
   ADMIN_EMAIL: Joi.string().email().default('admin@essentially.app'),
-  ADMIN_PASSWORD: Joi.string().min(8).default('Admin@12345'),
+  // Optional: the admin account is only bootstrapped when a password is set.
+  ADMIN_PASSWORD: Joi.string().min(8).allow(''),
   ADMIN_NAME: Joi.string().default('Admin Team'),
 });

@@ -28,7 +28,7 @@ npm run start:dev
 | `JWT_SECRET` | – (required) | At least 16 characters |
 | `JWT_EXPIRES_IN` | `7d` | |
 | `CORS_ORIGINS` | `*` | Comma-separated list in production |
-| `ADMIN_EMAIL` / `ADMIN_PASSWORD` / `ADMIN_NAME` | `admin@essentially.app` / `Admin@12345` / `Admin Team` | Bootstrapped on first start |
+| `ADMIN_EMAIL` / `ADMIN_PASSWORD` / `ADMIN_NAME` | `admin@essentially.app` / – / `Admin Team` | Admin account created on first start when `ADMIN_PASSWORD` is set (min. 8 characters) |
 
 Create the PostgreSQL database once with `createdb -U postgres essentially` (or via pgAdmin).
 

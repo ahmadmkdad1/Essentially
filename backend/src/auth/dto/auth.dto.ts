@@ -74,11 +74,11 @@ export class RegisterDto {
 }
 
 export class LoginDto {
-  @ApiProperty({ example: 'admin@essentially.app' })
+  @ApiProperty({ example: 'user@essentially.app' })
   @IsEmail()
   email: string;
 
-  @ApiProperty({ example: 'Admin@12345' })
+  @ApiProperty({ example: 'Demo@1234' })
   @IsString()
   @IsNotEmpty()
   password: string;

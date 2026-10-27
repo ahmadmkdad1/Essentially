@@ -46,3 +46,10 @@ app.*.map.json
 
 # Local tooling
 *.vsix
+
+# Local environment
+.env
+
+# Editor tooling state
+.github/modernize/
+.vscode/settings.json

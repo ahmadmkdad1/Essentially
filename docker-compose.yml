@@ -31,9 +31,10 @@ services:
       DB_PASSWORD: essentially
       DB_NAME: essentially
       DB_SYNCHRONIZE: "true"
-      JWT_SECRET: change-this-to-a-long-random-secret-in-production
-      ADMIN_EMAIL: admin@essentially.app
-      ADMIN_PASSWORD: Admin@12345
+      JWT_SECRET: ${JWT_SECRET:-change-this-to-a-long-random-secret-in-production}
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-admin@essentially.app}
+      # Set ADMIN_PASSWORD in your shell or a root .env file to create the admin account.
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-}
     ports:
       - "3000:3000"
 

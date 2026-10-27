@@ -639,7 +639,7 @@ async function seed() {
   logger.log(
     '  admin    : ' +
       (process.env.ADMIN_EMAIL ?? 'admin@essentially.app') +
-      ' (password from ADMIN_PASSWORD)',
+      ' (password from ADMIN_PASSWORD in .env)',
   );
   await app.close();
 }

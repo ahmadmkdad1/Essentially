@@ -123,8 +123,7 @@ class GreetingHeader extends ConsumerWidget {
   }
 }
 
-/// Avatar that opens a menu with the account page and a one-tap way back to
-/// the start (login) screen — handy for switching between demo accounts.
+/// Avatar that opens a menu with the account page and sign-out.
 class AccountMenu extends ConsumerWidget {
   const AccountMenu({super.key, this.showName = false});
   final bool showName;
@@ -150,8 +149,8 @@ class AccountMenu extends ConsumerWidget {
           case 'account':
             final route = _accountRoute(user.role);
             user.role == Role.admin ? context.push(route) : context.go(route);
-          case 'start':
-            // Signing out sends the router back to the start screen.
+          case 'signOut':
+            // The router redirects to the login screen once the session is cleared.
             await ref.read(authControllerProvider.notifier).logout();
         }
       },
@@ -177,12 +176,11 @@ class AccountMenu extends ConsumerWidget {
               ),
             ),
             const PopupMenuItem(
-              value: 'start',
+              value: 'signOut',
               child: ListTile(
                 contentPadding: EdgeInsets.zero,
-                leading: Icon(Icons.home_outlined, color: AppColors.primary),
-                title: Text('Back to start screen'),
-                subtitle: Text('Sign out and pick another account'),
+                leading: Icon(Icons.logout_rounded, color: AppColors.primary),
+                title: Text('Sign out'),
               ),
             ),
           ],

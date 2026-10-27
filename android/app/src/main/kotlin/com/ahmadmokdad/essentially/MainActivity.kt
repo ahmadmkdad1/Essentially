@@ -1,4 +1,4 @@
-package com.example.essentially
+package com.ahmadmokdad.essentially
 
 import io.flutter.embedding.android.FlutterActivity
 

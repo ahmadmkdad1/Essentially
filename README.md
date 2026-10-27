@@ -71,7 +71,7 @@ flowchart LR
 ```bash
 cd backend
 npm install
-cp .env.example .env        # set DB_PASSWORD and JWT_SECRET
+cp .env.example .env        # set DB_PASSWORD, JWT_SECRET and ADMIN_PASSWORD
 npm run seed                # builds, creates tables + demo data
 npm run start:dev           # http://localhost:3000/api  ·  Swagger: http://localhost:3000/docs
 ```
@@ -94,9 +94,8 @@ flutter run --dart-define=API_URL=http://192.168.1.20:3000/api   # physical devi
 |---|---|---|
 | Customer | `user@essentially.app` | `Demo@1234` |
 | Provider | `provider@essentially.app` | `Demo@1234` |
-| Admin | `admin@essentially.app` | `Admin@12345` |
 
-The login screen has one-tap buttons for each. The seed data includes providers across Beirut, Metn, Keserwan and Tripoli, requests in every state, reviews, and three open reports against a suspicious provider for the moderation queue.
+The login screen has one-tap buttons for both. The administrator account is not a demo account: it is created on first start from `ADMIN_EMAIL` / `ADMIN_PASSWORD` in `backend/.env`. The seed data includes providers across Beirut, Metn, Keserwan and Tripoli, requests in every state, reviews, and three open reports against a suspicious provider for the moderation queue.
 
 ## Testing
 
@@ -158,4 +157,4 @@ essentially/
 
 ## Author
 
-**Ahmad Mokdad** — Capstone project.
+**Ahmad Mokdad** — Capstone project. Released under the [MIT License](LICENSE).

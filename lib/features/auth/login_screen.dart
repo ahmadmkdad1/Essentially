@@ -27,7 +27,6 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
   static const _demoAccounts = [
     (label: 'Customer', icon: Icons.person_outline_rounded, email: 'user@essentially.app', password: 'Demo@1234'),
     (label: 'Provider', icon: Icons.storefront_outlined, email: 'provider@essentially.app', password: 'Demo@1234'),
-    (label: 'Admin', icon: Icons.shield_outlined, email: 'admin@essentially.app', password: 'Admin@12345'),
   ];
 
   @override

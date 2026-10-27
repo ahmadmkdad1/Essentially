@@ -22,11 +22,18 @@ export class BootstrapService implements OnApplicationBootstrap {
       'ADMIN_EMAIL',
       'admin@essentially.app',
     );
+    const password = this.config.get<string>('ADMIN_PASSWORD');
+    if (!password) {
+      this.logger.warn(
+        'ADMIN_PASSWORD is not set — skipping admin account bootstrap.',
+      );
+      return;
+    }
     if (!(await this.users.findByEmailWithPassword(email))) {
       await this.users.create({
         fullName: this.config.get<string>('ADMIN_NAME', 'Admin Team'),
         email,
-        password: this.config.get<string>('ADMIN_PASSWORD', 'Admin@12345'),
+        password,
         role: Role.ADMIN,
       });
       this.logger.log(`Created admin account ${email}`);
