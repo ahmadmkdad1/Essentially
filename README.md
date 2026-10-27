@@ -1,5 +1,11 @@
 # Essentially
 
+[![CI](https://github.com/ahmadmkdad1/Essentially/actions/workflows/ci.yml/badge.svg)](https://github.com/ahmadmkdad1/Essentially/actions/workflows/ci.yml)
+![Flutter](https://img.shields.io/badge/Flutter-3.32-02569B?logo=flutter&logoColor=white)
+![NestJS](https://img.shields.io/badge/NestJS-API-E0234E?logo=nestjs&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-14+-4169E1?logo=postgresql&logoColor=white)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 **A location-based marketplace for essential home services** — gas, water, electricity, internet, satellite, solar, plumbing and maintenance.
 Customers find trusted providers near them, providers manage priced services and incoming jobs, and administrators moderate the platform.
 
@@ -57,7 +63,7 @@ flowchart LR
 | **Geo search** | Bounding-box pre-filter in SQL (index-friendly) + exact haversine distance in the service layer, sorted and paginated. Works on any SQL database; PostGIS is a drop-in upgrade path |
 | **Domain rules** | Explicit request state machine (who can move a request where), price snapshot at request time, one review per completed job, duplicate-request and duplicate-report protection, ratings recalculated when reviews are hidden |
 | **Client** | Flutter 3.32, Riverpod 3, go_router with role-based redirects and deep links, Dio, dark Material 3 design system, adaptive layout (bottom bar on phones, navigation rail on tablets and web) |
-| **Quality** | 45 backend tests (unit + full end-to-end flow across all three roles), Flutter unit + widget tests, strict TypeScript, zero analyzer warnings |
+| **Quality** | 45 backend tests (unit + full end-to-end flow across all three roles), Flutter unit + widget tests, strict TypeScript, zero analyzer warnings, GitHub Actions CI on every push |
 
 ## Getting started
 
@@ -157,4 +163,4 @@ essentially/
 
 ## Author
 
-**Ahmad Mokdad** — Capstone project. Released under the [MIT License](LICENSE).
+**Ahmad Mokdad** — [GitHub](https://github.com/ahmadmkdad1). Released under the [MIT License](LICENSE).
